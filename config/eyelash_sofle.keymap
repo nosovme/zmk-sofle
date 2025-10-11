@@ -121,17 +121,19 @@
        host_dev {
            if-layers = <0>;
            then-layer = <1>;
-           keycode = <C_BTN_TRIGGER_HAPPY1>;
+           keycode = <205>;  // C_BTN_TRIGGER_HAPPY1
        };
+   
        host_browser {
            if-layers = <0>;
            then-layer = <2>;
-           keycode = <C_BTN_TRIGGER_HAPPY2>;
+           keycode = <206>;  // C_BTN_TRIGGER_HAPPY2
        };
+   
        host_media {
            if-layers = <0>;
            then-layer = <3>;
-           keycode = <C_BTN_TRIGGER_HAPPY3>;
+           keycode = <207>;  // C_BTN_TRIGGER_HAPPY3
        };
    };
 };
