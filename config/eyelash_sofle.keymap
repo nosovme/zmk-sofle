@@ -52,13 +52,6 @@
             flavor = "balanced";
             bindings = <&mo &kp>;
         };
-
-        host_trigger_layer1: host_trigger_layer1 {
-            compatible = "zmk,behavior-macro";
-            label = "HOST_TRIGGER_LAYER1";
-            #binding-cells = <0>;
-            bindings = <&tog 1>;
-        };
     };
 
     scroll_encoder: scroll_encoder {
@@ -122,12 +115,23 @@
         };
     };
 
-    macros {
-        macro_trigger_happy1: macro_trigger_happy1 {
-            compatible = "zmk,behavior-macro";
-            label = "MACRO_TRIGGER_HAPPY1";
-            #binding-cells = <0>;
-            bindings = <&tog 1>;
-        };
-    };
+   conditional_layers {
+       compatible = "zmk,conditional-layers";
+   
+       host_dev {
+           if-layers = <0>;
+           then-layer = <1>;
+           keycode = <C_BTN_TRIGGER_HAPPY1>;
+       };
+       host_browser {
+           if-layers = <0>;
+           then-layer = <2>;
+           keycode = <C_BTN_TRIGGER_HAPPY2>;
+       };
+       host_media {
+           if-layers = <0>;
+           then-layer = <3>;
+           keycode = <C_BTN_TRIGGER_HAPPY3>;
+       };
+   };
 };
