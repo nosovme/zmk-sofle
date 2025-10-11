@@ -113,6 +113,12 @@
             layers = <0>;
             timeout-ms = <80>;
         };
+
+        combo_trigger_happy_1 {
+            timeout-ms = <50>;
+            bindings = <&tog 1>;
+            key-positions = <C_BTN_TRIGGER_HAPPY1>;
+        };
     };
 
 };
