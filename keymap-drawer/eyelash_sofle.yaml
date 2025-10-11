@@ -7,7 +7,7 @@ layers:
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
-  - Alt+F4
+  - BTN TRIGGER HAPPY1
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
@@ -20,7 +20,7 @@ layers:
   - E
   - R
   - T
-  - Alt+F4
+  - BTN TRIGGER HAPPY1
   - Y
   - U
   - I
@@ -33,7 +33,7 @@ layers:
   - D
   - F
   - G
-  - Alt+F4
+  - BTN TRIGGER HAPPY1
   - H
   - J
   - K
@@ -46,7 +46,7 @@ layers:
   - C
   - V
   - B
-  - Alt+F4
+  - BTN TRIGGER HAPPY1
   - N
   - M
   - {t: ',', s: <}
