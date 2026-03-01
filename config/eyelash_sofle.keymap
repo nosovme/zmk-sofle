@@ -40,7 +40,7 @@
         shift_space: shift_space {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
@@ -48,9 +48,25 @@
         layer_two_backspace: layer_two_backspace {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <120>;
             flavor = "balanced";
             bindings = <&mo &kp>;
+        };
+
+        lang_switch_ctrl: lang_switch_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            flavor = "balanced";
+            bindings = <&kp &kp>;
+        };
+
+        alt_delete: alt_delete {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            flavor = "balanced";
+            bindings = <&kp &kp>;
         };
     };
 
@@ -67,24 +83,24 @@
 
         layer0 {
             bindings = <
-&kp GRAVE     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp C_BTN_TRIGGER_HAPPY1     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &trans
-&trans    &kp Q      &kp W         &kp E         &kp R   &kp T        &kp C_BTN_TRIGGER_HAPPY1   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp LEFT_BRACKET
-&kp LSHFT    &kp A      &kp S         &kp D         &kp F   &kp G        &kp C_BTN_TRIGGER_HAPPY1   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp LCTRL   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp C_BTN_TRIGGER_HAPPY1  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &trans
-&kp C_MUTE  &kp LEFT_GUI  &kp LALT  &layer_two_backspace 1 BACKSPACE   &shift_space LSHIFT SPACE  &trans    &kp LA(F4)  &kp LG(SPACE)  &kp ENTER  &kp TAB      &kp RIGHT_SHIFT  &kp DELETE
-            >;
-
+&kp GRAVE     &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp LA(F4)     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &trans
+&trans    &kp Q      &kp W         &kp E         &kp R   &kp T        &kp LA(F4)   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp LEFT_BRACKET
+&kp LSHFT    &kp A      &kp S         &kp D         &kp F   &kp G        &kp LA(F4)   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
+&kp LCTRL   &kp Z      &kp X         &kp C         &kp V   &kp B        &kp LA(F4)  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &trans
+&trans  &mo 2  &alt_delete LALT DELETE  &layer_two_backspace 1 BACKSPACE   &shift_space LSHIFT SPACE  &kp LEFT_GUI    &kp LA(F4)  &lang_switch_ctrl LCTRL LG(SPACE)  &kp ENTER  &kp TAB      &kp RIGHT_SHIFT  &kp DELETE
+            >; 
+        
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             display-name = "LAYER0";
         };
 
         layer_1 {
             bindings = <
-&kp ESC   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &trans     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &kp UP_ARROW     &kp LG(SPACE)        &mkp MB4           &trans   &kp PG_UP        &kp HOME         &kp UP      &kp END   &kp MINUS         &kp EQUAL
-&trans      &kp LC(A)     &kp LEFT_GUI      &kp LCTRL        &kp LSHFT        &mkp MB5           &trans   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp LC(LS(Z)) &kp LC(Z)     &kp LC(C)       &kp LC(X)       &kp LC(V)         &trans             &trans  &rgb_ug RGB_BRI  &kp PG_UP         &kp INSERT  &kp PG_DN    &kp BACKSLASH           &trans
-&kp C_MUTE  &trans           &trans          &trans          &trans           &kp LA(F4)            &trans        &trans           &trans           &trans      &trans     &trans
+&trans    &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &trans     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
+&trans      &trans        &kp ESC      &trans     &trans        &trans           &trans   &trans        &kp HOME         &kp UP      &kp END   &kp MINUS         &kp EQUAL
+&trans      &kp LC(A)     &kp LA(V)     &kp LCTRL        &kp LSHFT         &trans           &trans   &trans        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp LC(LS(Z)) &kp LC(Z)     &kp LC(C)       &kp LC(X)       &kp LC(V)         &kp LC(SLASH)             &trans  &rgb_ug RGB_BRI  &kp PG_UP         &kp INSERT  &kp PG_DN    &kp BACKSLASH           &trans
+&trans  &trans           &trans          &trans          &trans           &kp LA(F4)            &trans        &trans           &trans           &kp LS(TAB)      &trans     &trans
             >;
  
             display-name = "layer1";
@@ -115,25 +131,4 @@
         };
     };
 
-   conditional_layers {
-       compatible = "zmk,conditional-layers";
-   
-       host_dev {
-           if-layers = <0>;
-           then-layer = <1>;
-           keycode = <205>;
-       };
-   
-       host_browser {
-           if-layers = <0>;
-           then-layer = <2>;
-           keycode = <206>;
-       };
-   
-       host_media {
-           if-layers = <0>;
-           then-layer = <3>;
-           keycode = <207>;
-       };
-   };
 };
